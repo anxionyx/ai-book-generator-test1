@@ -20,7 +20,7 @@ jobs:
         run: |
            pip install uv
            wget -O cloud.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-           dpkg -i ./cloud.deb
+           sudo  dpkg -i ./cloud.deb
            cloudflared tunnel --url http://localhost:8501 &
            sleep 15
            uv run python main.py
